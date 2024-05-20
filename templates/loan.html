@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register | Inventory</title>
+	<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+</head>
+<body>
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <h1 class="load">ANALYZING</h1>
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <h1 class="load">PROCESSING LOAN</h1>
+        </div>
+    </div>
+<!-- CONTAINER OPENING -->
+<div class="container">
+    <!-- BUTTON SWITCH -->
+    <div class="loginregisterbtn">
+        <h2 class="title_form">MY LOAN</h2>
+        <button type="button" id="login-btn" onclick="showLoginForm()" class="btn1 active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STEP 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button type="button" id="register-btn" onclick="showRegisterForm()" class="btn2 inactive">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STEP 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+    </div>
+
+    <!-- LOG IN -->
+    <div id="login-form" class="login">
+
+    <h2 class="title1">LOAN APPLICATION</h2>
+    <!-- FORM LOG IN -->
+    <form name="login-form" method="post">
+        <div class="form-group">
+            <label for="login-email">How much would you like to borrow?</label>
+            <input type="number" class="email" name="email" id="login-email" placeholder="Enter amount" required>
+        </div>
+        <div class="form-group">
+            <label for="login-pass">For how many months?</label>
+            <input type="number" class="pass" name="password" id="login-pass" placeholder="Enter months" required>
+        </div>
+            <input type="submit" class="btn" name="login" id="login-btn" value="CONFIRM">
+            <p class="welcome">WELCOME TO WEB LOAN APPLICATION</p>
+            <p class="text1">Please check the
+            <span><a href="" class="link"> loan conditions </a></span> with
+            the same email address that you used previously. This will ensure you can view 
+            your credentials in our system.</p>
+            <p class="text2">If you have any question please don’t hesitate to reach out us at
+            <span><a href="mailto:inventorysystem@gmail.com" class="link">webloan@gmail.com.</a></span></p>
+            <br>
+            <br>
+        </form>
+    </div>
+
+
+    <!-- REGISTER -->
+    <div id="register-form" style="display: none;" class="register">
+    <!-- REGISTER PHP -->
+   
+
+    <h2 class="title1">LOAN DETAILS</h2>
+    <!-- FORM REGISTER -->
+    <form action="" method="post">
+
+      <div class="form-group">
+        <div class="name-inputs">
+            <div class="input-group">
+                <label for="register-firstname">First name*</label>
+                <input type="text" class="firstname" name="firstname" id="register-firstname" placeholder="Enter your first name" required>
+            </div>
+            <div class="input-group">
+                <label for="register-lastname">Last name*</label>
+                <input type="text" class="lastname" name="lastname" id="register-lastname" placeholder="Enter your last name" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="register-email">Email*</label>
+            <input type="email" class="email" name="email" id="register-email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="register-email">Birthday*</label>
+            <input type="date" class="email" name="birthday" id="register-birthday" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender*</label>
+              <div class="custom-select">
+               <select id="gender" name="gender" required onchange="showOtherInput()">
+                <option value="" disabled selected style="display: none;">Your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>   
+              <img src="{{url_for('static', filename='icon/down.png')}}" class="arrow-down">
+            </div>
+            
+        <div class="form-groupGender">
+            <div id="otherInput" style="display: none; font-size: 12px;  ">
+            <input type="text" id="otherGender" name="gender"  placeholder="Enter your gender" required >
+             </div>
+           </div>
+        </div>
+
+        <div class="form-group">
+            <label for="register-pass">Enter PIN*</label>
+            <input type="password" class="pass" name="password" id="register-pass" placeholder="Enter your PIN" required>
+        </div>
+
+        <div class="form-group">
+            <label for="register-pass">Confirm PIN*</label>
+            <input type="password" class="pass" name="repeat_password" id="register-pass" placeholder="Confirm your PIN" required>
+        </div>
+
+        <p class="agreement">By submitting this form, you accept the
+            <span><a href="" class="link">terms & conditions</a></span>.</p>
+        <br>
+        <input type="submit" class="btn" id="login-btn" name="submit" value="SUBMIT" onclick="showMessage()">
+        
+        <h2 class="benefits">LOAN<br> ENABLES YOU TO:</h2>
+        <h2 class="list">Submit</h2>   
+    </form>
+
+    
+<!-- CONTAINER CLOSING -->
+</div>
+<script>
+    function showOtherInput() {
+        var selectBox = document.getElementById("gender");
+        var otherInput = document.getElementById("otherInput");
+        var otherGenderInput = document.getElementById("otherGender");
+        
+        if (selectBox.value === "other") {
+            otherInput.style.display = "block";
+        } else {
+            otherInput.style.display = "none";
+            // Reset the value of otherGender input field
+            otherGenderInput.value = "";
+        }
+    }
+</script>
+</div>
+<script src="{{url_for('static', filename='js/index.js')}}"></script> 
+<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> 
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> 
+<script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> 
+<script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> 
+
+</body>
+</html>

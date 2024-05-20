@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Approved</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/approved.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+</head>
+<body>
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <h1 class="load">ANALYZING</h1>
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <h1 class="load">PLEASE WAIT</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="result">
+            <h2 class="approved">LOAN APPLICATION APPROVED</h2>
+            <p>We are pleased to inform you that your application for a loan has been approved 
+                as it successfully met all the necessary requirements, and thus we are happy to
+                 confirm that your loan will be processed shortly; however, if you have any questions 
+                 or require further details regarding the terms of your loan, please feel free to contact
+                  our help services, where our team will be delighted to assist you with any inquiries or 
+                  provide additional information you may need regarding your loan agreement and conditions.</p>
+            <br>
+            <p>Click the button below to proceed:</p>
+        </div>
+        <a href="/loan" class="accept-button">
+        <div class="text-container">
+            <span>PROCEED TO LOAN</span>
+            <span>PROCEED TO LOAN</span>
+        </div>
+    </a>
+    </div>
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> 
+	<script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+	<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> 
+</body>
+</html>

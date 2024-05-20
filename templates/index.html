@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- WEBSITE TITLE -->
+    <title>WEBLOAN | Loan Applicantion Form</title>
+     <!-- STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<!-- WEB ICON / FAV ICON  -->
+    <link rel="icon" href="{{url_for('static', filename='images/logo.svg')}}">
+
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    <!-- PRELOADER -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <h1 class="load">WEBLOAN</h1>
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <h1 class="load">PLEASE WAIT</h1>
+        </div>
+    </div>
+
+
+    <header id="header" class="header">
+        <!-- NAVIGATION BAR -->
+        <div class="navbar-wrapper2" id="navbar-wrapper">
+            <nav class="navbar2" id="navbar">
+              <div class="left-section2">
+                <ul>
+                  <li><a href="#Predict" class=" page-scroll">APPLY LOAN</a></li>
+                  <li><a href="joinreport">ABOUT</a></li>
+                  <li><a href="#">DISCOVER</a></li>
+                    </ul>
+                </div>
+                <div class="center-section">
+                    <span>WEBLOAN</span>
+                </div>
+
+                
+            </nav>
+        </div>
+    
+        <!-- HOME HEADER -->
+        <div class="header-content">
+            <div class="container">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <p class="textPredict"> 
+                            <br>
+                            <br> 
+                            <br> 
+                            <br> 
+                            <br>                   
+                            <span style="font-size: 15px; font-family: 'SF-Pro-Display-Regular'; color: white; letter-spacing: 1px;">
+                                INTRODUCING THE NEW
+                            </span>
+                            <br> 
+                            LOAN PREDICTION 
+                            <span id="js-rotating">APPROVAL</span>
+                        </p>
+                        <a href="" class="loanLink">> APPLY LOAN NOW!</a>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+    </header>
+
+    <!-- DESCRIPTION -->
+    <div class="services" id="Description">
+        <h1 class="titleLoan">LOAN APPLICATION</h1>
+        <p class="info">Get your loan application approval chances by providing few necessary informations.</p>
+        <div class="image-grid">
+            <img src="{{url_for('static', filename='images/loan_app.jpg')}}" alt="Description Image 1" class="service-image">
+            <img src="{{url_for('static', filename='images/loan_app.jpg')}}" alt="Description Image 2" class="service-image">
+            <img src="{{url_for('static', filename='images/loan_app.jpg')}}" alt="Description Image 3" class="service-image">
+        </div>
+        <h3 class="info2">Get your loan application approval chances by providing few necessary informations.</h3>
+    </div>
+    <br>
+    <br>
+
+    <!-- TERMS CONTENTS -->
+    <div id="Predict" class="ex-basic-2">
+        <div class="container">
+            <h3 class="textFill">PLEASE FILL UP THE LOAN APPROVAL CORRECTLY:</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+							<!-- CONTACT FORM -->
+								<form id="contactForm" data-toggle="validator" data-focus="false" action="{{ url_for('Loan_Application') }}" method="POST">
+								
+                                <div class="form-group">
+                                    <input name="genders_type" list="genders" class="form-control-input" required select>
+                                    <label class="label-control" for="genders_type">Gender*</label>
+                                    <datalist id="genders">
+                                    <option value="MALE">
+                                    <option value="FEMALE">                            
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="marital_status" list="married" class="form-control-input" required select>
+                                    <label class="label-control" for="marital_status"> Marital status of the applicant*</label>
+                                    <datalist id="married">
+                                    <option value="YES">
+                                    <option value="NO">                            
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="dependents" list="dependents_list" class="form-control-input" required select>
+                                    <label class="label-control" for="dependents">Dependents: No. of people dependent on the applicant (>=2,<2)*</label>
+                                    <datalist id="dependents_list">
+                                    <option value=">=2">
+                                    <option value="<2">
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="education_status" list="education" class="form-control-input" required select>
+                                    <label class="label-control" for="education_status">Education level of the applicant (Graduated, Not Graduated)*</label>
+                                    <datalist id="education">
+                                    <option value="GRADUATED">
+                                    <option value="NOT GRADUATED">                            
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div> 
+
+                                <div class="form-group">
+                                    <input name="self_employment" list="employment" class="form-control-input" required select>
+                                    <label class="label-control" for="self_employment"> Self-employed (Yes, No)*</label>
+                                    <datalist id="employment">
+                                    <option value="YES">
+                                    <option value="NO">                            
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>	
+                        </div> 
+                </div> 	
+
+					<!-- CONTACT FORM -->
+				    <div class="col-lg-6">
+                        <div class="text-container">
+							
+                            <div class="form-group">
+                                    <input name="applicantIncome" type="number" min="0" max="100000" class="form-control-input" id="applicantIncome" required select>
+                                    <label class="label-control" for="applicantIncome">Applicant Income: The amount of income the applicant earns:*</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="coapplicantIncome" type="number" min="0" max="100000" class="form-control-input" id="coapplicantIncome" required select>
+                                    <label class="label-control" for="coapplicantIncome">Co-applicant Income: The amount of income the co-applicant earns:*</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input name="loan_amnt" class="form-control-input" type="number" min="500" max="40000" id="loan_amnt" required select>
+                                    <label class="label-control" for="loan_amnt">Loan Amount (₱5000 to ₱10000):*</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input name="term_d"  class="form-control-input" type="number" min="10" max="365" id="term_d" required select>
+                                    <label class="label-control" for="term_d">Loan Amount Term: The  no. of days over which the loan will be paid (in Days)*</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="credit_history" list="crhist_list" class="form-control-input" required select>
+                                    <label class="label-control" for="credit_history">Credit History of a borrower's responsible(1- has all debts paid, 0- not paid)*</label>
+                                    <datalist id="crhist_list">
+                                    <option value="0">
+                                    <option value="1">
+                                    
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+       
+                                <div class="form-group">
+                                    <input name="property_area" list="property_list" class="form-control-input" required select>
+                                    <label class="label-control" for="property_area">Location*</label>
+                                    <datalist id="property_list">
+                                    <option value="RURAL">
+                                    <option value="SEMIRURAL">
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>	
+								
+                        </div>
+					</div> 	
+   
+                    <button type="submit" class="form-control-submit-button">
+                        <div class="text-container">
+                          <span>SUBMIT APPLICATION</span>
+                          <span>SUBMIT APPLICATION</span>
+                        </div>
+                    </button>           
+				</form>
+			</div> 
+		</div>
+    </div> 
+
+   <!-- FOOTER -->
+<div id="contact" class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Information -->
+            <div class="col-md-4">
+                <h4>WEBLOAN</h4>
+                <p>Email: info@webloan.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        
+            <div class="col-md-2">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h4>Social</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add these scripts at the end of the body -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</div> 
+
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> 
+	<script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+	<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> 
+    <script>
+        window.onscroll = function() {scrollFunction()};
+      
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "-60px";
+          } else {
+            document.getElementById("navbar").style.top = "0";
+          }
+        }
+      </script>
+      
+</body>
+</html>

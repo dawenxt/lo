@@ -1,0 +1,571 @@
+@font-face {
+    font-family: 'SF-Pro-Text-Semibold';
+    src: url('SF-Pro-Text-Semibold.ttf') format('truetype'); /* Adjust the path to your font file */
+
+}
+
+@font-face {
+    font-family: 'SF-Pro-Display-Bold';
+    src: url('SF-Pro-Display-Bold.ttf') format('truetype'); /* Adjust the path to your font file */
+
+}
+
+@font-face {
+    font-family: 'SF-Pro-Display-Regular';
+    src: url('SF-Pro-Display-Regular.ttf') format('truetype'); /* Adjust the path to your font file */
+
+}
+
+body {
+    font-family: 'SF-Pro-Text-Semibold', Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    margin: 0;
+}
+
+/*CONTAINER FOR ALL*/
+.container {
+    border-radius: 8px; 
+    padding: 40px;
+    width: 450px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container h1 {
+    margin-bottom: 50px;
+    color: #333;
+    font-size: 17px;
+}
+
+/*LOGIN AND REGISTER BUTTON SWITCH*/
+.loginregisterbtn {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 0;
+    z-index: 999; 
+    text-align: center;
+    margin-top: 80px;
+}
+
+.login,
+.register {
+    position: fixed;
+    top: 90px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 450px; 
+    background-color: #ffffff;
+    padding: 20px;
+    z-index: 998; 
+    text-align: center;
+    margin-top: 110px;
+}
+
+
+.loginregisterbtn h2 {
+    margin: 0;
+}
+
+.loginregisterbtn button {
+    margin-top: 50px; 
+    border: none;
+    background: none;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 50px; 
+    color: black; 
+}
+
+.loginregisterbtn button.active {
+    color: black; 
+}
+
+.loginregisterbtn button.inactive {
+    color: gray; 
+}
+
+.loginregisterbtn button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px; 
+    background-color: rgb(180, 180, 180); 
+    transition: all 0.3s ease;
+}
+
+.loginregisterbtn button.active::after {
+    height: 1.5px; 
+    background-color: black;
+}
+
+/*FORM INPUT USER*/
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 13px;  
+    color: rgb(105, 105, 105);
+}
+
+.form-group input {
+    color: rgb(105, 105, 105);
+    width: 100%;
+    height: 50%;
+    padding: 7px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-size: 12px;  
+    letter-spacing: 1px;
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    height: 62%; 
+    color: rgb(105, 105, 105);
+    font-size: 14px;
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+/*FORM OTHER GENDER*/
+.form-groupGender {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.form-groupGender label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 13px;  
+    color: rgb(105, 105, 105);
+}
+
+.form-groupGender input {
+    color: rgb(105, 105, 105);
+    width: 100%;
+    height: 50%;
+    padding: 8px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-size: 12px;  
+    letter-spacing: 1px;
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+.form-groupGender select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    height: 62%; 
+    color: rgb(105, 105, 105);
+    font-size: 14px;
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+
+/*BUTTON ARROW DOWN*/
+.custom-select {
+    position: relative;
+}
+
+.custom-select select {
+    width: 100%; 
+    font-size: 12px;  
+    letter-spacing: 1px;
+    padding: 8px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    height: 63%; 
+    text-align: left; 
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.arrow-down {
+    position: absolute;
+    top: 50%; 
+    right: 11px; 
+    transform: translateY(-50%); 
+    width: 16px; 
+    height: auto; 
+    max-height: 100%; 
+    pointer-events: none;
+}
+
+/*FOR FIRST NAME AND LASTNAME ALIGNMENT*/
+.name-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-group:last-child {
+    margin-right: 0;
+}
+
+.name-inputs .input-group input {
+    width: 100%;
+    height: 60%;
+    padding: 7px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-family: 'SF-Pro-Display-Regular';
+    font-size: 12px;  
+    color: rgb(105, 105, 105);
+    letter-spacing: 1px;
+}
+
+/*INPUT FOR EMAIL AND PASS*/
+.email{
+    color: rgb(105, 105, 105);
+    font-size: 14px;
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+.pass{
+    color: gray;
+    font-size: 14px;
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+/*BUTTON FOR LOGIN AND REGISTER SUBMIT*/
+.btn {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+    font-family: 'SF-Pro-Display-Regular';
+    letter-spacing: 1px;
+    margin-top: 17px;
+}
+
+.btn1{
+    font-family: 'SF-Pro-Text-Semibold';
+    text-align: center;
+}
+
+.btn2{
+    font-family: 'SF-Pro-Text-Semibold';
+}
+
+/*BOTTOM TEXT*/
+.welcome{
+    font-size: 11px;
+    margin-top: 30px;
+    font-family: 'SF-Pro-Display-Bold';
+    color: rgb(0, 0, 0);
+}
+
+.text1{
+    font-size: 13px;
+    font-family: 'SF-Pro-Display-Regular';
+    color: rgb(116, 115, 115);
+}
+
+.text2{
+    font-size: 13px;
+    font-family: 'SF-Pro-Display-Regular';
+    color: rgb(116, 115, 115);
+}
+
+.link{
+    color: #000000;
+    font-weight: bold;
+    font-family: 'SF-Pro-Display-Bold';
+    font-size: 12px;
+}
+.agreement{
+    text-align: left;
+    font-size: 12px;
+    color: gray;
+    letter-spacing: 1px;
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+/*FORGOT PASSWORD*/
+.forgot{
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: rgb(105, 105, 105);
+    font-family: 'SF-Pro-Display-Regular';
+}
+
+/*BOTTOM TEXT*/
+.benefits{
+    text-align: left;
+    font-size: 18px;
+    margin-top: 35px;
+}
+
+.list{
+    font-size: 14px;
+    text-align: left;
+}
+
+.title_form{
+    font-size: 20px;
+    font-family: 'SF-Pro-Display-Regular';
+    letter-spacing: 1px;
+}
+
+/*IMAGES AT TOP*/
+.images {
+    width: 50px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+/* NAVBAR STYLE */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+.navbar-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Align navbar items to the right */
+    align-items: center;
+}
+
+
+.left-section {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left-section li {
+    display: inline;
+    margin-right: 20px;
+    font-size: 11px;
+}
+
+.left-section li:last-child {
+    margin-right: 0;
+}
+
+.left-section li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.alert{
+    font-size: 13px;
+    font-family: 'SF-Pro-Text-Semibold';
+    margin-bottom: 30px;
+    color: red;
+}
+
+.alert1{
+    font-size: 13px;
+    font-family: 'SF-Pro-Text-Semibold';
+    margin-bottom: 30px;
+    color: green;
+}
+
+/* SLIDING TEXT EFFECT */
+.sliding-text-container {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 7px 20px; /* Decreased padding */
+    z-index: 9999; /* Ensure sliding text is above other elements */
+}
+
+.sliding-text {
+    white-space: nowrap;
+    animation: slideText 40s linear infinite; /* Adjust duration here */
+    font-size: 10px;
+    font-family: 'SF-Pro-Display-Regular';
+    letter-spacing: 2px;
+    animation-fill-mode: forwards; /* Keeps the final state after animation */
+    animation-play-state: running; /* Ensure animation runs even when tab is inactive */
+}
+
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.left-section {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left-section li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.left-section li:last-child {
+    margin-right: 0;
+}
+
+.left-section li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.ownerLogin{
+    font-size: 10px;
+    font-family: 'SF-Pro-Text-Semibold';
+    text-decoration: none;
+    color: #333;
+}
+
+.loginOwner{
+    font-size: 10px;
+    font-family: 'SF-Pro-Display-Bold';
+    text-decoration: none;
+    color: #000000;
+}
+
+/* CHECKBOX */
+input[type="checkbox"].custom-checkbox {
+    display: none;
+}
+
+input[type="checkbox"].custom-checkbox {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: white; 
+    border: 1px solid #818181; 
+    cursor: pointer;
+}
+
+input[type="checkbox"].custom-checkbox:checked {
+    background-color: gray;
+}
+
+.custom-label { 
+    display: flex; 
+    align-items: center; 
+}
+
+.load{
+    text-align: center;
+    font-size: 11px;
+    }
+    
+.title1{
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+/*************************/
+/*     02. Preloader     */
+/*************************/
+.spinner-wrapper {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+  }
+  
+  .spinner {
+    position: absolute;
+    top: 50%; /* centers the loading animation vertically one the screen */
+    left: 50%; /* centers the loading animation horizontally one the screen */
+    width: 3.75rem;
+    height: 1.25rem;
+    margin: -0.625rem 0 0 -1.875rem; /* is width and height divided by two */
+    text-align: center;
+  }
+  
+  .spinner > div {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    background-color: #000000;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 2s infinite ease-in-out both;
+  }
+  
+  .spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  
+  .spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  
+  @-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+  
+  @keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  

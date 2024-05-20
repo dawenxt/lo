@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Denied</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/denied.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+</head>
+<body>
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <h1 class="load">ANALYZING</h1>
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <h1 class="load">PLEASE WAIT</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="result">
+            <h2 class="denied">LOAN APPLICATION DENIED</h2>
+            <p>Unfortunately, your application for a loan was denied as you failed to meet certain requirements, and thus we are sorry to inform you that we cannot approve your application at this time; however, if you feel that we made a mistake or if you need further clarification on our decision, please feel free to contact our help services, where our team will be happy to assist you with any questions or concerns you may have regarding your application or the criteria that were not met.</p>
+            <br>
+            <p>If you wish to apply for another loan application, please click the button below to proceed with a new application:</p>
+        </div>
+        <a href="/" class="accept-button">
+        <div class="text-container">
+            <span>TRY ANOTHER PROPOSAL</span>
+            <span>TRY ANOTHER PROPOSAL</span>
+        </div>
+    </a>
+    </div>
+
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> 
+	<script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+	<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> 
+</body>
+</html>
